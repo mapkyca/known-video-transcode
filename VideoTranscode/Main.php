@@ -62,9 +62,9 @@ namespace IdnoPlugins\VideoTranscode {
 					//'480p-hd',
 					'480p-sd',
 					//'360p-hd',
-					'360p-sd',
+					//'360p-sd',
 					//'240p-hd',
-					'240p-sd'
+					//'240p-sd'
 				    ] as $profile) {
 					
 					$ext = str_replace('video/', '', $mime);
