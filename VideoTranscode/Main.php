@@ -27,7 +27,8 @@ namespace IdnoPlugins\VideoTranscode {
 			$settings = [
 			    'ffmpeg.bin' => \Idno\Core\Idno::site()->config()->VideoTranscode['ffmpeg'],
 			    'qt-faststart.bin' => \Idno\Core\Idno::site()->config()->VideoTranscode['faststart'],
-			    
+			    'timeoutbin' => \Idno\Core\Idno::site()->config()->VideoTranscode['timeoutbin'],
+			    'timeout' => (int)\Idno\Core\Idno::site()->config()->VideoTranscode['timeout'],
 			];
 			
 			$transcoder = new \Html5Video\Html5Video($settings);
@@ -77,7 +78,9 @@ namespace IdnoPlugins\VideoTranscode {
 					try {
 					    $transcoder->convert($masterfile, $outfile, $profile,[
 						'audio' => true,
-						'targetFormat' => $ext
+						'targetFormat' => $ext,
+						'timeoutbin' => $settings['timeoutbin'],
+						'timelimit' =>  $settings['timeout'], // Timeout in 10 minutes, since this is probably long enough for most things and prevents bad videos from snarling up the processor
 					    ]);
 					
 					    if ($media = \Idno\Entities\File::createFromFile($outfile, "KTV-{$attachment['_id']}-$profile.$ext", $mime, true)) {

@@ -16,7 +16,9 @@ namespace IdnoPlugins\VideoTranscode\Pages {
 
 	    \Idno\Core\Idno::site()->config->config['VideoTranscode'] = [
 		'ffmpeg' => $this->getInput('ffmpeg'),
-		'faststart' => $this->getInput('faststart')
+		'faststart' => $this->getInput('faststart'),
+		'timeoutbin' => $this->getInput('timeoutbin', '/usr/bin/timeout'),
+		'timeout' => (int)$this->getInput('timeout', 600),
 	    ];
 	    \Idno\Core\Idno::site()->config()->save();
 	    \Idno\Core\Idno::site()->session()->addMessage('Video Transcoding settings saved.');

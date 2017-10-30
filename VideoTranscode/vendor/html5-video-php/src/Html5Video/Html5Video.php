@@ -384,7 +384,7 @@ class Html5Video {
 
   protected function setTimeLimit() {
     $timeLimit = max(0, intval($this->config['timelimit']));
-    set_time_limit($timeLimit);
+    //set_time_limit($timeLimit); // MP: Deprecated as this causes problems, do it a different way
   }
 
   /**

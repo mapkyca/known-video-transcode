@@ -9,7 +9,7 @@ Installation
 ------------
 * Drop VideoTranscode into your IdnoPlugins directory and activate
 * Install ffmpeg ```sudo apt-get install ffmpeg x264```
-* Configure the location of ffmpeg and qt-faststart
+* Configure the location of ffmpeg and qt-faststart, timeout and the execution time limit
 
 Now, when you upload a video, it will be queued and transcoded.
 
@@ -17,7 +17,7 @@ Now, when you upload a video, it will be queued and transcoded.
 Includes
 --------
 
-* html5-video-php <https://github.com/xemle/html5-video-php> by Xemle <https://github.com/xemle> distributed under the MIT Licence.
+* Modified version of html5-video-php <https://github.com/mapkyca/html5-video-php>, originally by Xemle <https://github.com/xemle> distributed under the MIT Licence.
 
 See
 ---
