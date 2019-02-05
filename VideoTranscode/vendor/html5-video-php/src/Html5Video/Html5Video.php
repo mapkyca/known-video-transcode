@@ -45,7 +45,7 @@ class Html5Video {
        * 'videoContainers' => array('flv' => array('videoEncoder' => 'flv', 'audioEncoder' => 'mp3'));
        */
       'videoContainers' => array(
-        'mp4' => array('videoEncoder' => array('x264', 'h264'), 'audioEncoder' => 'aac'),
+        'mp4' => array('videoEncoder' => array('x264', 'h264'), 'audioEncoder' => 'mp3'),
         'webm' => array('videoEncoder' => array('vpx', 'vp8'), 'audioEncoder' => 'vorbis'),
         'ogg' => array('videoEncoder' => 'theora', 'audioEncoder' => 'vorbis')
         ),
