@@ -73,7 +73,7 @@ namespace IdnoPlugins\VideoTranscode {
 					touch($outfile);
 					chmod($outfile, 0777);  // Change mode so ffmpeg can access
 					
-					\Idno\Core\Idno::site()->logging()->info("Generating $mime ($profile)...");
+					\Idno\Core\Idno::site()->logging()->info("Generating $mime ($profile) storing in $outfile...");
 					
 					try {
 					    $transcoder->convert($masterfile, $outfile, $profile,[
