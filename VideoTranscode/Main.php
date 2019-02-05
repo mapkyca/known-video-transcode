@@ -25,10 +25,10 @@ namespace IdnoPlugins\VideoTranscode {
 
 			$tmp = \Idno\Core\Idno::site()->config()->getTempDir();
 			$settings = [
-			    'ffmpeg.bin' => \Idno\Core\Idno::site()->config()->VideoTranscode['ffmpeg'],
-			    'qt-faststart.bin' => \Idno\Core\Idno::site()->config()->VideoTranscode['faststart'],
-			    'timeoutbin' => \Idno\Core\Idno::site()->config()->VideoTranscode['timeoutbin'],
-			    'timeout' => (int)\Idno\Core\Idno::site()->config()->VideoTranscode['timeout'],
+			    'ffmpeg.bin' => \Idno\Core\Idno::site()->config()->VideoTranscode['ffmpeg'] ? \Idno\Core\Idno::site()->config()->VideoTranscode['ffmpeg'] : '/usr/bin/ffmpeg',
+			    'qt-faststart.bin' => \Idno\Core\Idno::site()->config()->VideoTranscode['faststart'] ? \Idno\Core\Idno::site()->config()->VideoTranscode['faststart'] : '/usr/bin/qt-faststart',
+			    'timeoutbin' => \Idno\Core\Idno::site()->config()->VideoTranscode['timeoutbin'] ? \Idno\Core\Idno::site()->config()->VideoTranscode['timeoutbin'] : '/usr/bin/timeout',
+			    'timeout' => (int)\Idno\Core\Idno::site()->config()->VideoTranscode['timeout'] ? \Idno\Core\Idno::site()->config()->VideoTranscode['timeout'] : 600,
 			];
 			
 			$transcoder = new \Html5Video\Html5Video($settings);
