@@ -5,7 +5,15 @@ namespace IdnoPlugins\VideoTranscode {
     class Main extends \Idno\Common\Plugin {
 
 	function init() {
-	    loader()->registerNamespace('Html5Video', dirname(__FILE__) . '/vendor/html5-video-php/src/');
+	    //loader()->registerNamespace('Html5Video', dirname(__FILE__) . '/vendor/html5-video-php/src/');
+	    spl_autoload_register(function($class) {
+		$class = str_replace('\\', DIRECTORY_SEPARATOR, $class);
+
+		$basedir = dirname(__FILE__) . '/vendor/html5-video-php/src/';
+		if (file_exists($basedir.$class.'.php')) { 
+		    include_once($basedir.$class.'.php');
+		}
+	    });
 	    parent::init();
 	}
 
